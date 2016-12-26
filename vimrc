@@ -19,6 +19,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Syntastic'
 
 
+Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } " file drawer
+
+
+
+
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this linell of your Plugins must be added
 " before the following line
@@ -50,10 +55,6 @@ inoremap jk <ESC> <nop>
 "#changing the map leader to space bar
 let mapleader = "\<Space>"
 
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-call plug#end()
 
 "#create a shortcut using leader to quit vim without saving
 nnoremap <leader><leader>q :xa<cr>
@@ -67,3 +68,12 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" Toggle NERDTree
+nmap <silent> <leader>k :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+let NERDTreeShowHidden=1
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
